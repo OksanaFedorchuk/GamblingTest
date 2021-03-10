@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Web View View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GamblingTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WebViewViewController" customModule="GamblingTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,39 +19,27 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CasinoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="rjz-Ou-hNp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-nh-U87">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rjz-Ou-hNp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5Fd-qR-UaJ"/>
+                            <constraint firstItem="0RC-nh-U87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FcW-La-swb"/>
                             <constraint firstItem="rjz-Ou-hNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KdY-UI-sht"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0RC-nh-U87" secondAttribute="trailing" id="Yap-Ai-pnC"/>
+                            <constraint firstItem="0RC-nh-U87" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uM7-fs-62o"/>
                             <constraint firstItem="rjz-Ou-hNp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="whC-EL-OEm"/>
                             <constraint firstAttribute="bottom" secondItem="rjz-Ou-hNp" secondAttribute="bottom" id="xwX-ML-942"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0RC-nh-U87" secondAttribute="bottom" id="yBF-SH-Hol"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="y8Q-Wf-iez" kind="show" id="BtE-y0-Wow"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81.159420289855078" y="71.651785714285708"/>
-        </scene>
-        <!--Web View View Controller-->
-        <scene sceneID="ryw-XD-llF">
-            <objects>
-                <viewController id="y8Q-Wf-iez" customClass="WebViewViewController" customModule="GamblingTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jr6-5n-cVQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="iME-1c-HCf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="wTH-II-9lu"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gE8-kR-7se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="681" y="72"/>
+            <point key="canvasLocation" x="371" y="-371"/>
         </scene>
     </scenes>
     <resources>
