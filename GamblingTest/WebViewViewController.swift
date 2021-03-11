@@ -24,6 +24,7 @@ class WebViewViewController: UIViewController {
     // MARK:  Methods
     
     override func viewWillAppear(_ animated: Bool) {
+        
         view.addSubview(webView)
         guard let url = URL(string: "https://www.google.com") else {
             return }
