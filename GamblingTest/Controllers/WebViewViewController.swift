@@ -21,13 +21,14 @@ class WebViewViewController: UIViewController {
         return webView
     }()
     
-    // MARK:  Methods
+    private var url = URL(string: "https://www.google.com")
     
+    // MARK:  Methods
+
     override func viewWillAppear(_ animated: Bool) {
         view.addSubview(webView)
-        guard let url = URL(string: "https://www.google.com") else {
-            return }
-        webView.load(URLRequest(url: url))
+        loadWebView()
+        configureButtons()
         webView.navigationDelegate = self
     }
     
@@ -35,6 +36,35 @@ class WebViewViewController: UIViewController {
         super.viewDidLayoutSubviews()
         webView.frame = view.bounds
     }
+    
+    private func loadWebView() {
+        guard let url = url else {
+            return }
+        webView.load(URLRequest(url: url))
+    }
+    
+    private func configureButtons() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.backward.2"),
+            style: .plain, target: self,
+            action: #selector(didTapBack))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(didTapRefresh))
+        
+        navigationItem.leftBarButtonItem?.tintColor = .white
+        navigationItem.rightBarButtonItem?.tintColor = .white
+    }
+    
+    @objc private func didTapBack() {
+        webView.goBack()
+    }
+    @objc private func didTapRefresh() {
+        loadWebView()
+    }
+    
 }
 
 // MARK:  WKNavigationDelegate
@@ -54,6 +84,8 @@ extension WebViewViewController: WKNavigationDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        self.navigationItem.leftBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         view.layoutIfNeeded()
     }
 }

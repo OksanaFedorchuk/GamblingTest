@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Web View View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WebViewViewController" customModule="GamblingTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <constraint firstAttribute="bottom" secondItem="rjz-Ou-hNp" secondAttribute="bottom" id="xwX-ML-942"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3pB-VF-zco"/>
+                    <navigationItem key="navigationItem" title="Title" id="3pB-VF-zco"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
