@@ -24,7 +24,7 @@ class WebViewViewController: UIViewController {
     private var url = URL(string: "https://www.google.com")
     
     // MARK:  Methods
-
+    
     override func viewWillAppear(_ animated: Bool) {
         view.addSubview(webView)
         loadWebView()
@@ -43,20 +43,34 @@ class WebViewViewController: UIViewController {
         webView.load(URLRequest(url: url))
     }
     
+    // MARK:  Bar buttons
+    
     private func configureButtons() {
+        //left button to go back
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "chevron.backward.2"),
             style: .plain, target: self,
             action: #selector(didTapBack))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        //right buttons to login and refresh
+        let refreshButton = UIBarButtonItem(
             barButtonSystemItem: .refresh,
             target: self,
             action: #selector(didTapRefresh))
         
+        let loginButton = UIBarButtonItem(
+            image: UIImage(systemName: "person.fill"),
+            style: .plain, target: self,
+            action: #selector(didTapLogin))
+        navigationItem.rightBarButtonItems = [loginButton, refreshButton]
+        
+        //make buttons white
+        loginButton.tintColor = .white
+        refreshButton.tintColor = .white
         navigationItem.leftBarButtonItem?.tintColor = .white
-        navigationItem.rightBarButtonItem?.tintColor = .white
     }
+    
+    // MARK:  Web View Navigation
     
     @objc private func didTapBack() {
         webView.goBack()
@@ -64,13 +78,16 @@ class WebViewViewController: UIViewController {
     @objc private func didTapRefresh() {
         loadWebView()
     }
-    
+    @objc private func didTapLogin() {
+        performSegue(withIdentifier: "goToLogin", sender: self)
+    }
 }
 
 // MARK:  WKNavigationDelegate
 
 extension WebViewViewController: WKNavigationDelegate {
     
+    //check if incoming url is valid
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         if let host = navigationResponse.response.url?.host {
             if host.contains("google.com") {
@@ -78,6 +95,7 @@ extension WebViewViewController: WKNavigationDelegate {
                 return
             }
         }
+        //cancel request loading and show empty page
         decisionHandler(.cancel)
         webView.removeFromSuperview()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

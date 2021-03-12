@@ -16,6 +16,7 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         loginVstack.loginButton.delegate = self
         view.addSubview(loginVstack)
+        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = .white
         //    stack constraints
         loginVstack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -27,6 +28,7 @@ class RegistrationViewController: UIViewController {
         checkRegistration()
     }
     
+    //check if user is registered via facebook
     func checkRegistration() {
         if let token = AccessToken.current,
            !token.isExpired {
@@ -51,6 +53,8 @@ class RegistrationViewController: UIViewController {
         }
     }
 }
+
+// MARK:  Facebook LoginButtonDelegate
 
 extension RegistrationViewController: LoginButtonDelegate {
     
