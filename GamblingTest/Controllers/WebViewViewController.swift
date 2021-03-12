@@ -24,7 +24,6 @@ class WebViewViewController: UIViewController {
     // MARK:  Methods
     
     override func viewWillAppear(_ animated: Bool) {
-        
         view.addSubview(webView)
         guard let url = URL(string: "https://www.google.com") else {
             return }
@@ -51,5 +50,10 @@ extension WebViewViewController: WKNavigationDelegate {
         }
         decisionHandler(.cancel)
         webView.removeFromSuperview()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        view.layoutIfNeeded()
     }
 }

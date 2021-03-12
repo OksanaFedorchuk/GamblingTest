@@ -14,6 +14,7 @@
 		180F442525F7BA4F0031BD7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180F442425F7BA4F0031BD7A /* Assets.xcassets */; };
 		180F442825F7BA4F0031BD7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180F442625F7BA4F0031BD7A /* LaunchScreen.storyboard */; };
 		180F443F25F8C6D90031BD7A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F443E25F8C6D80031BD7A /* RegistrationViewController.swift */; };
+		184F4E9125FB60F4007778EB /* LoginVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F4E9025FB60F4007778EB /* LoginVStackView.swift */; };
 		AD9EB9A23B47351F4D21929A /* Pods_GamblingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3296B882FD79C3502CD373F /* Pods_GamblingTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		180F442725F7BA4F0031BD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180F442925F7BA4F0031BD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180F443E25F8C6D80031BD7A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		184F4E9025FB60F4007778EB /* LoginVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVStackView.swift; sourceTree = "<group>"; };
 		6ACFDDE0D3FFFAB2294690B4 /* Pods-GamblingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamblingTest.release.xcconfig"; path = "Target Support Files/Pods-GamblingTest/Pods-GamblingTest.release.xcconfig"; sourceTree = "<group>"; };
 		C3296B882FD79C3502CD373F /* Pods_GamblingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamblingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A4BC9686AEB3E695BCD40 /* Pods-GamblingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamblingTest.debug.xcconfig"; path = "Target Support Files/Pods-GamblingTest/Pods-GamblingTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,14 +69,31 @@
 			children = (
 				180F441B25F7BA4B0031BD7A /* AppDelegate.swift */,
 				180F441D25F7BA4B0031BD7A /* SceneDelegate.swift */,
-				180F441F25F7BA4B0031BD7A /* WebViewViewController.swift */,
-				180F442125F7BA4B0031BD7A /* Main.storyboard */,
-				180F443E25F8C6D80031BD7A /* RegistrationViewController.swift */,
+				184F4E8725FB5C0C007778EB /* Controllers */,
+				184F4EA025FB73A4007778EB /* Views */,
 				180F442425F7BA4F0031BD7A /* Assets.xcassets */,
 				180F442625F7BA4F0031BD7A /* LaunchScreen.storyboard */,
 				180F442925F7BA4F0031BD7A /* Info.plist */,
 			);
 			path = GamblingTest;
+			sourceTree = "<group>";
+		};
+		184F4E8725FB5C0C007778EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				180F441F25F7BA4B0031BD7A /* WebViewViewController.swift */,
+				180F443E25F8C6D80031BD7A /* RegistrationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		184F4EA025FB73A4007778EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				180F442125F7BA4B0031BD7A /* Main.storyboard */,
+				184F4E9025FB60F4007778EB /* LoginVStackView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D106A245DB464EA0720AB873 /* Frameworks */ = {
@@ -211,6 +230,7 @@
 				180F442025F7BA4B0031BD7A /* WebViewViewController.swift in Sources */,
 				180F441C25F7BA4B0031BD7A /* AppDelegate.swift in Sources */,
 				180F441E25F7BA4B0031BD7A /* SceneDelegate.swift in Sources */,
+				184F4E9125FB60F4007778EB /* LoginVStackView.swift in Sources */,
 				180F443F25F8C6D90031BD7A /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
