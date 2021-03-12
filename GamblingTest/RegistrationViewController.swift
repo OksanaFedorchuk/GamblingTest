@@ -1,5 +1,5 @@
 //
-//  RegistrationView.swift
+//  RegistrationViewController.swift
 //  GamblingTest
 //
 //  Created by Oksana Fedorchuk on 10.03.2021.
@@ -9,7 +9,7 @@ import UIKit
 import FBSDKLoginKit
 
 
-class RegistrationView: UIViewController, LoginButtonDelegate {
+class RegistrationViewController: UIViewController, LoginButtonDelegate {
     
     let registerLabel: UILabel = {
         let label = UILabel()

@@ -61,16 +61,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        )
 //    }
     
-//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-//        if let url = URLContexts.first?.url {
-//            print(url)
-//            let urlString = url.absoluteString
-//            let component = urlString.components(separatedBy: "=")
-//            if component.count > 1, let product = component.last {
-//                print(product)
-//            }
-//        }
-//    }
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            print(url)
+            let urlString = url.absoluteString
+            let component = urlString.components(separatedBy: "=")
+            if component.count > 1, let product = component.last {
+                print(product)
+                navigateToRegistrationVC()
+            }
+        }
+    }
+    
+    func navigateToRegistrationVC() {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        guard let registrationPage = storyBoard.instantiateViewController(identifier: "RegistrationViewController") as? RegistrationViewController else {return}
+        let navVC = window?.rootViewController as? UINavigationController
+        navVC?.pushViewController(registrationPage, animated: true)
+    }
 
 }
 
